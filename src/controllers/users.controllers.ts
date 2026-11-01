@@ -7,6 +7,7 @@ let siguienteId: number = 1;
 export function listUsers(req: Request, res: Response) {
     // #swagger.tags = ['Usuarios']
     // #swagger.description = 'Obtiene todos los usuarios'
+    // #swagger.security = [{ "ApiKeyAuth": [] }]
 
     res.status(200).json({
         ok: true,
@@ -21,6 +22,7 @@ export function createUser(
 ) {
     // #swagger.tags = ['Usuarios']
     // #swagger.description = 'Crea un usuario'
+    // #swagger.security = [{ "ApiKeyAuth": [] }]
 
     const { name, email, role } = req.body ?? {};
 
@@ -57,6 +59,7 @@ export function createUser(
 export function getUserById(req: Request, res: Response) {
     // #swagger.tags = ['Usuarios']
     // #swagger.description = 'Busca un usuario por ID'
+    // #swagger.security = [{ "ApiKeyAuth": [] }]
 
     const id = Number(req.params.id);
 
@@ -92,6 +95,7 @@ export function updateUser(
 ) {
     // #swagger.tags = ['Usuarios']
     // #swagger.description = 'Actualiza un usuario por ID'
+    // #swagger.security = [{ "ApiKeyAuth": [] }]
 
     const id = Number(req.params.id);
 
@@ -143,6 +147,7 @@ export function updateUser(
 export function deleteUser(req: Request, res: Response) {
     // #swagger.tags = ['Usuarios']
     // #swagger.description = 'Elimina un usuario por ID'
+    // #swagger.security = [{ "ApiKeyAuth": [] }]
 
     const id = Number(req.params.id);
 

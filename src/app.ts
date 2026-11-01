@@ -4,6 +4,8 @@ import apiRouter from "./routes";
 import cors from "cors";
 import { logger } from "./middlewares/logger.middleware";
 import { validarApiKey } from "./middlewares/auth.middleware";
+import swaggerUi from "swagger-ui-express";
+import swaggerOutput from "../swagger-output.json";
 
 const app = express();
 
@@ -22,6 +24,11 @@ app.get("/api/status", function (req, res) {
     });
 });
 
+app.use(
+    "/api-docs",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerOutput)
+);
 app.use("/api", validarApiKey, apiRouter);
 
 app.listen(env.port, function () {
