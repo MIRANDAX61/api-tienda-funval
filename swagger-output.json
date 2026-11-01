@@ -1,0 +1,32 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API de la tienda",
+    "description": "Usuarios, categorías, productos y órdenes",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "x-api-key"
+    }
+  },
+  "paths": {
+    "/api/status": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

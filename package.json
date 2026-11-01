@@ -6,7 +6,9 @@
   "scripts": {
   "dev": "tsx watch src/app.ts",
   "typecheck": "tsc --noEmit",
-  "build": "tsc"},
+  "build": "tsc",
+  "swagger": "tsx src/swagger.ts"
+  },
   
   "repository": {
     "type": "git",
